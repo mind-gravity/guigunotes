@@ -24,13 +24,13 @@ EXPOSE 9545
 ```
 Host$ docker pull mindgravity/guigulive:latest
 ```
-- 二、启动镜像容器
-```
-Host$ docker run -t -i -p 3000:3000 -p 8545:8545 -p 9545:9545 --mount type=bind,source=/你的宿主机文件路径/code,target=/home/node/code mindgravity/guigulive:latest /bin/bash
-```
-- 三、切换到宿主机挂载目录，复制react文件到本地目录(节约unbox下载react的过程)
+- 二、启动镜像容器，切换到宿主机挂载目录
 ```
 Host$ cd 你的宿主机文件路径/code
+Host$ docker run -t -i -p 3000:3000 -p 8545:8545 -p 9545:9545 --mount type=bind,source=/你的宿主机文件路径/code,target=/home/node/code mindgravity/guigulive:latest /bin/bash
+```
+- 三、复制react文件到本地目录(节约unbox下载react的过程)
+```
 Container$ cp -rf /home/node/code_backup/* .
 ```
 - 四、像课里那样在另一个终端里启动测试网络
