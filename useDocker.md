@@ -30,6 +30,7 @@ Host$ docker run -t -i -p 3000:3000 -p 8545:8545 -p 9545:9545 --mount type=bind,
 ```
 - 三、切换到宿主机挂载目录，复制react文件到本地目录(节约unbox下载react的过程)
 ```
+Host$ cd 你的宿主机文件路径/code
 Container$ cp -rf /home/node/code_backup/* .
 ```
 - 四、像课里那样在另一个终端里启动测试网络
