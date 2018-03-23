@@ -32,4 +32,9 @@ docker run -t -i -p 3000:3000 -p 8545:8545 -p 9545:9545 --mount type=bind,source
 ```
 cp -rf /home/node/code_backup/* .
 ```
+- 四、像课里那样在另一个终端里启动测试网络
+```
+docker exec -it 容器id /bin/bash
+ganache-cli
+```
 - 说明：初学docker，按照视频安装了truffle，unbox了react，但是有些原始的坑没有修改，需要自行debug。
