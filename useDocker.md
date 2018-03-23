@@ -26,9 +26,9 @@ docker pull mindgravity/guigulive:latest
 ```
 - 二、启动镜像容器
 ```
-docker run -t -i -p 3000:3000 --mount type=bind,source=/你的宿主机文件路径/code,target=/home/node/code mindgravity/guigulive:latest /bin/bash
+docker run -t -i -p 3000:3000 -p 8545:8545 -p 9545:9545 --mount type=bind,source=/你的宿主机文件路径/code,target=/home/node/code mindgravity/guigulive:latest /bin/bash
 ```
-- 三、复制文件，略过react的过程
+- 三、复制文件，略过下载react的过程
 ```
 cp -rf /home/node/code_backup/* .
 ```
