@@ -7,13 +7,18 @@ MAINTAINER mindgravity
 
 WORKDIR /home/node/code
 
+ADD . /home/node/cache
+
 RUN apt-get update \
   && apt-get upgrade -y \
+  && npm install -g webpack webpack-cli \
   && npm install -g truffle ganache-cli \
-  && cd .. \
-  && mkdir code_backup \
-  && cd /home/node/code \
   && truffle unbox react \
+  && npm install --save react@^16.2.0 react-dom@^16.2.0 antd@^3.3.3 \
+  && cp -rf /home/node/cache/truffle.js /home/node/code/truffle.js \
+  && cp -rf /home/node/cache/getWeb3.js /home/node/code/src/utils/getWeb3.js \
+  && rm -rf /home/node/cache/* \
+  && mkdir /home/node/code_backup \
   && mv /home/node/code/* /home/node/code_backup
 
 EXPOSE 3000
@@ -39,3 +44,4 @@ Host$ docker exec -it 容器id /bin/bash
 Container$ ganache-cli
 ```
 - 说明：初学docker，按照视频安装了truffle，unbox了react，但是有些原始的坑没有修改，需要自行debug。P.S. Host$表示宿主机终端，Container$表示容器内终端。
+- 更新lesson5 tag：安装了react 16.2.0；安装了antd 3.3.3；修改了truffle.js和getWeb3.js文件，默认使用ganache的8545端口。将原latest tag改为lesson4。
