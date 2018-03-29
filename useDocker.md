@@ -35,11 +35,11 @@ Host$ cd 你的宿主机文件路径/code
 Host$ docker run -t -i -p 3000:3000 -p 8545:8545 -p 9545:9545 --mount type=bind,source=/你的宿主机文件路径/code,target=/home/node/code mindgravity/guigulive:latest /bin/bash
 ```
 - 三、复制react文件到本地目录(节约unbox下载react的过程)
-（<font color=red>注意！</font>如果你是从第五课开始使用本镜像，请注意备份原开发环境中的contracts、migrations、src、test文件夹内容，以防重置覆盖。）
+- （<font color=red>注意！</font>如果你是从第五课开始使用本镜像，请注意备份原开发环境中的contracts、migrations、src、test文件夹内容，以防重置覆盖。）
 ```
 Container$ cp -rf /home/node/code_backup/* .
 ```
-（将已备份的上述文件夹再拷到原位置实现环境更新而本地文件保持原样。）
+- （将已备份的上述文件夹再拷到原位置实现环境更新而本地文件保持原样。）
 - 四、像课里那样在另一个终端里启动测试网络
 ```
 Host$ docker exec -it 容器id /bin/bash
