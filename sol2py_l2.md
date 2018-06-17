@@ -21,7 +21,7 @@ require()
 
 ### 二、结构
 
-| 内容 | Solidity | Python |
+| 内容 | Solidity | Python（无结构体用类实现） |
 | :-- | :-- | :-- |
 | 申明创建 | struct 首字大写结构名 {<br>&nbsp;&nbsp;&nbsp;&nbsp;属性1;<br>&nbsp;&nbsp;&nbsp;&nbsp;属性2;<br>&nbsp;&nbsp;&nbsp;&nbsp;...;<br>}|class 首字大写类名():<br>&nbsp;&nbsp;&nbsp;&nbsp;def \_\_init\_\_(self, 属性参数1, 属性参数2, ...):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.属性1 = 属性参数1<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.属性2 = 属性参数2<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...|
 | 创建实例 | 首字大写结构名(属性参数1, 属性参数2, ...) | 首字大写类名(属性参数1, 属性参数2, ...) |
