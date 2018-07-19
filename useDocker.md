@@ -29,8 +29,9 @@ EXPOSE 8545
 ```
 Host$ docker pull mindgravity/guigulive:latest
 ```
-- 二、启动镜像容器，切换到宿主机挂载目录
+- 二、启动镜像容器，创建并切换到宿主机挂载目录
 ```
+Host$ mkdir 你的宿主机文件路径/code
 Host$ cd 你的宿主机文件路径/code
 Host$ docker run -t -i -p 3000:3000 -p 8545:8545 --mount type=bind,source=/你的宿主机文件路径/code,target=/home/node/code mindgravity/guigulive:latest /bin/bash
 ```
